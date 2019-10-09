@@ -1,4 +1,36 @@
 .features {
-	background-color: $colour-grey-light-2;
 	grid-column: center-start / center-end;
+	
+	margin: 15rem 0;
+
+	display: grid;
+	// grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	// row doesn't need to be specified as it will be IMPLICIT (not defined)
+	grid-gap: 6rem;
+
+	align-items: start;
+}
+
+// FEATURE COMPONENT
+.feature {
+	display: grid;
+	grid-template-columns: min-content 1fr;
+	
+	grid-row-gap: 1.5rem;
+	grid-column-gap: 2.5rem;
+	&__icon {
+		fill: $colour-primary; // colour SVGs
+		width: 4.5rem;
+		height: 4.5rem;
+		grid-row: 1 / span 2;
+		transform: translateY(-1rem);
+		// -1 -> END OF EXPLICIT GRID (ROWS/COLS WE DEFINE)
+		// -1 does not work if rows/cols are not defined
+		// so we use span 2 instead
+	}
+
+	&__content {
+		font-size: 1.7rem;
+	}
 }

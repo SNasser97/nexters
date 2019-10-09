@@ -1,0 +1,21 @@
+%heading {
+	font-family: $font-display;
+	font-weight: 400;
+}
+
+.heading-1 {
+ 	@extend %heading;		
+}
+.heading-2 {
+ 	@extend %heading;	
+}
+.heading-3 {
+	@extend %heading;
+}
+.heading-4 {
+ 	@extend %heading; 
+ 	// using extend so that .heading-4 uses styles from %heading
+ 	font-size: 1.9rem;
+ 	&--light { color: $colour-grey-light-1; }
+ 	&--dark { color: $colour-grey-dark-1; }
+}

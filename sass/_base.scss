@@ -48,8 +48,5 @@ body {
 	//minmax(6rem, 1fr); // when viewport small, 6rem width
 	// otherwise max width is remaining width of viewport/grid
 
-	& > * { // temp
-		font-size: 3rem;
-		padding: 40px;
-	}
+	
 }
