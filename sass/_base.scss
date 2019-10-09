@@ -1,15 +1,55 @@
 // COLOR VARIABLES
-$color-primary: #c69963;
-$color-primary-dark: #B28451;
+$colour-primary: #c69963;
+$colour-primary-dark: #B28451;
 
-$color-secondary: #101d2c;
+$colour-secondary: #101d2c;
 
-$color-grey-light-1: #f9f7f6;
-$color-grey-light-2: #aaa;
+$colour-grey-light-1: #f9f7f6;
+$colour-grey-light-2: #aaa;
 
-$color-grey-dark-1: #54483A;
-$color-grey-dark-2: #6D5D4B;
+$colour-grey-dark-1: #54483A;
+$colour-grey-dark-2: #6D5D4B;
 
 // FONT VARIABLES
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+html {
+	box-sizing: border-box;
+	font-size: 62.5%; //1rem = 10px, 10/16 = 62.25
+}
+
+body {
+	font-family: $font-primary;
+	color: $colour-grey-dark-2;
+	background-color: $colour-grey-light-1; // set bg for firefox
+	font-weight: 300;
+	line-height: 1.6;
+}
+
+.container {
+	display: grid;
+	grid-template-rows: 80vh min-content 40vw repeat(3, min-content); // auto, fit content automatically
+	grid-template-columns: 
+	[sidebar-start] 8rem 
+	[sidebar-end full-start] minmax(6rem, 1fr)
+	[center-start] repeat(8, 
+		[col-start] minmax(min-content, 14rem) [col-end]) 
+	[center-end] minmax(6rem, 1fr) 
+	[full-end]; // 1140px/8px = 142.5, round down to 140px or 14rem
+	
+	//minmax(6rem, 1fr); // when viewport small, 6rem width
+	// otherwise max width is remaining width of viewport/grid
+
+	& > * { // temp
+		font-size: 3rem;
+		padding: 40px;
+	}
+}
