@@ -8,7 +8,6 @@
 	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 	// row doesn't need to be specified as it will be IMPLICIT (not defined)
 	grid-gap: 6rem;
-
 	align-items: start;
 }
 
@@ -16,7 +15,8 @@
 .feature {
 	display: grid;
 	grid-template-columns: min-content 1fr;
-	
+	// min-content for logo, so we only change the __icon height + width - large or small
+	// the col will fit to the content(its given size)
 	grid-row-gap: 1.5rem;
 	grid-column-gap: 2.5rem;
 	&__icon {
