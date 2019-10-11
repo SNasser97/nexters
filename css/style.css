@@ -156,10 +156,12 @@ body {
     background-image: linear-gradient(to right bottom, #c69963, rgba(16, 29, 44, 0.95));
     transition: all 0.65s cubic-bezier(0.86, 0, 0.07, 1);
     width: 0;
-    opacity: 0; }
+    opacity: 0;
+    visibility: hidden; }
   .sidebar__checkbox:checked ~ .sidebar__nav {
     opacity: 1;
     width: 100%;
+    visibility: visible;
     background-image: linear-gradient(to right bottom, #c69963, rgba(16, 29, 44, 0.95)); }
   .sidebar__icon {
     position: relative;
