@@ -113,7 +113,7 @@
 
 	// click function
 	&__checkbox:checked ~ &__background {
-		transform: scaleY(80);
+		transform: scale(80);
 		// transition: all .8s ;
 
 	}
