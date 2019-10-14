@@ -3,12 +3,16 @@
 	grid-column: sidebar-start / sidebar-end;
 	grid-row: 1 / -1;
 
-	width: 100%;
-	background-image: linear-gradient(
-	rgba($colour-primary, 1) 20%,
-	rgba($colour-primary-dark, .85) 40%); 
-	transition: all .55s cubic-bezier(.74,.21,0,1.64);
-
+	
+	&__menu {
+		width: 100%;
+		position: relative;
+		height: 100%;
+		background-image: linear-gradient(
+		rgba($colour-primary, .95) 20%,
+		rgba($colour-primary-dark, .95) 40%); 
+		transition: all .65s cubic-bezier(.74,.21,0,1.64);
+	}
 	&__checkbox {
 		display: none;
 	}
@@ -84,13 +88,15 @@
 	// CLICK FUNCTION FOR MENU
 
 	// on collapse - sidebar
-	&__checkbox ~ .sidebar { // on collapse be above all elem
+	&__checkbox ~ .sidebar &__menu { // on collapse be above all elem
 		z-index: 999;
+		background-color: rgba(red, 0.5);
 	}
 	// on expand - sidebar
-	&__checkbox:checked ~ .sidebar {
+	&__checkbox:checked ~ .sidebar &__menu {
 		opacity: 1;
 		width: 30rem;
+		box-shadow: 0 1rem 2rem rgba(0,0,0,.35);
 	}
 	
 	// on collapse - sidebar__nav
@@ -114,7 +120,7 @@
 		&,
 		&::before,
 		&::after {
-			width: 3rem;
+			width: 3.5rem;
 			height: 2px;
 			background-color: #fff;
 			display: inline-block;
@@ -126,8 +132,8 @@
 			left: 0;
 			transition: all .2s;
 		}
-		&::before {top:-.8rem;}
-		&::after {top: .8rem;}
+		&::before {top:-1.3rem;}
+		&::after {top: 1.3rem;}
 	}
 	&__button:hover &__icon:before {top: -1rem;}
 	&__button:hover &__icon:after {top: 1rem;}
