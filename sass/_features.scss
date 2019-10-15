@@ -3,22 +3,36 @@
 	
 	margin: 15rem 0;
 
-	display: grid;
-	// grid-template-columns: repeat(3, 1fr);
-	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-	// row doesn't need to be specified as it will be IMPLICIT (not defined)
-	grid-gap: 6rem;
-	align-items: start;
+
+	@supports(display: grid) {
+		display: grid;
+		// grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+		// row doesn't need to be specified as it will be IMPLICIT (not defined)
+		grid-gap: 6rem;
+		align-items: start;
+	}
 }
 
 // FEATURE COMPONENT
 .feature {
+	
+	float:left;
+	width: 33.33%;
+	margin-bottom: 6rem;
+
+	@supports(display: grid) {
+		width:auto;
+		margin-bottom: 0;
+	}
+	
 	display: grid;
 	grid-template-columns: min-content 1fr;
 	// min-content for logo, so we only change the __icon height + width - large or small
 	// the col will fit to the content(its given size)
 	grid-row-gap: 1.5rem;
 	grid-column-gap: 2.5rem;
+
 	&__icon {
 		fill: $colour-primary; // colour SVGs
 		width: 4.5rem;
